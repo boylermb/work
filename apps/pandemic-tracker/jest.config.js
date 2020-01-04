@@ -1,7 +1,7 @@
 module.exports = {
-  name: 'pandemic-tracker-nx',
+  name: 'pandemic-tracker',
   preset: '../../jest.config.js',
-  coverageDirectory: '../../coverage/apps/pandemic-tracker-nx',
+  coverageDirectory: '../../coverage/apps/pandemic-tracker',
   snapshotSerializers: [
     'jest-preset-angular/AngularSnapshotSerializer.js',
     'jest-preset-angular/HTMLCommentSerializer.js'

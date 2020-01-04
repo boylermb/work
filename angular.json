@@ -1,39 +1,39 @@
 {
   "version": 1,
   "projects": {
-    "pandemic-tracker-nx": {
+    "pandemic-tracker": {
       "projectType": "application",
       "schematics": {
         "@nrwl/angular:component": {
           "style": "scss"
         }
       },
-      "root": "apps/pandemic-tracker-nx",
-      "sourceRoot": "apps/pandemic-tracker-nx/src",
+      "root": "apps/pandemic-tracker",
+      "sourceRoot": "apps/pandemic-tracker/src",
       "prefix": "work",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/apps/pandemic-tracker-nx",
-            "index": "apps/pandemic-tracker-nx/src/index.html",
-            "main": "apps/pandemic-tracker-nx/src/main.ts",
-            "polyfills": "apps/pandemic-tracker-nx/src/polyfills.ts",
-            "tsConfig": "apps/pandemic-tracker-nx/tsconfig.app.json",
+            "outputPath": "dist/apps/pandemic-tracker",
+            "index": "apps/pandemic-tracker/src/index.html",
+            "main": "apps/pandemic-tracker/src/main.ts",
+            "polyfills": "apps/pandemic-tracker/src/polyfills.ts",
+            "tsConfig": "apps/pandemic-tracker/tsconfig.app.json",
             "aot": false,
             "assets": [
-              "apps/pandemic-tracker-nx/src/favicon.ico",
-              "apps/pandemic-tracker-nx/src/assets"
+              "apps/pandemic-tracker/src/favicon.ico",
+              "apps/pandemic-tracker/src/assets"
             ],
-            "styles": ["apps/pandemic-tracker-nx/src/styles.scss"],
+            "styles": ["apps/pandemic-tracker/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/pandemic-tracker-nx/src/environments/environment.ts",
-                  "with": "apps/pandemic-tracker-nx/src/environments/environment.prod.ts"
+                  "replace": "apps/pandemic-tracker/src/environments/environment.ts",
+                  "with": "apps/pandemic-tracker/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -63,66 +63,63 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "pandemic-tracker-nx:build"
+            "browserTarget": "pandemic-tracker:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "pandemic-tracker-nx:build:production"
+              "browserTarget": "pandemic-tracker:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "pandemic-tracker-nx:build"
+            "browserTarget": "pandemic-tracker:build"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "apps/pandemic-tracker-nx/tsconfig.app.json",
-              "apps/pandemic-tracker-nx/tsconfig.spec.json"
+              "apps/pandemic-tracker/tsconfig.app.json",
+              "apps/pandemic-tracker/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/pandemic-tracker-nx/**"]
+            "exclude": ["**/node_modules/**", "!apps/pandemic-tracker/**"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "apps/pandemic-tracker-nx/jest.config.js",
-            "tsConfig": "apps/pandemic-tracker-nx/tsconfig.spec.json",
-            "setupFile": "apps/pandemic-tracker-nx/src/test-setup.ts"
+            "jestConfig": "apps/pandemic-tracker/jest.config.js",
+            "tsConfig": "apps/pandemic-tracker/tsconfig.spec.json",
+            "setupFile": "apps/pandemic-tracker/src/test-setup.ts"
           }
         }
       }
     },
-    "pandemic-tracker-nx-e2e": {
-      "root": "apps/pandemic-tracker-nx-e2e",
-      "sourceRoot": "apps/pandemic-tracker-nx-e2e/src",
+    "pandemic-tracker-e2e": {
+      "root": "apps/pandemic-tracker-e2e",
+      "sourceRoot": "apps/pandemic-tracker-e2e/src",
       "projectType": "application",
       "architect": {
         "e2e": {
           "builder": "@nrwl/cypress:cypress",
           "options": {
-            "cypressConfig": "apps/pandemic-tracker-nx-e2e/cypress.json",
-            "tsConfig": "apps/pandemic-tracker-nx-e2e/tsconfig.e2e.json",
-            "devServerTarget": "pandemic-tracker-nx:serve"
+            "cypressConfig": "apps/pandemic-tracker-e2e/cypress.json",
+            "tsConfig": "apps/pandemic-tracker-e2e/tsconfig.e2e.json",
+            "devServerTarget": "pandemic-tracker:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "pandemic-tracker-nx:serve:production"
+              "devServerTarget": "pandemic-tracker:serve:production"
             }
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/pandemic-tracker-nx-e2e/tsconfig.e2e.json"],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/pandemic-tracker-nx-e2e/**"
-            ]
+            "tsConfig": ["apps/pandemic-tracker-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/pandemic-tracker-e2e/**"]
           }
         }
       }
@@ -140,5 +137,5 @@
       "unitTestRunner": "jest"
     }
   },
-  "defaultProject": "pandemic-tracker-nx"
+  "defaultProject": "pandemic-tracker"
 }

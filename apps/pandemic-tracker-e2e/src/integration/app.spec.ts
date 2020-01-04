@@ -1,6 +1,6 @@
 import { getGreeting } from '../support/app.po';
 
-describe('pandemic-tracker-nx', () => {
+describe('pandemic-tracker', () => {
   beforeEach(() => cy.visit('/'));
 
   it('should display welcome message', () => {
@@ -8,6 +8,6 @@ describe('pandemic-tracker-nx', () => {
     cy.login('my-email@something.com', 'myPassword');
 
     // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains('Welcome to pandemic-tracker-nx!');
+    getGreeting().contains('Welcome to pandemic-tracker!');
   });
 });

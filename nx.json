@@ -8,10 +8,10 @@
     "nx.json": "*"
   },
   "projects": {
-    "pandemic-tracker-nx-e2e": {
+    "pandemic-tracker-e2e": {
       "tags": []
     },
-    "pandemic-tracker-nx": {
+    "pandemic-tracker": {
       "tags": []
     }
   }
