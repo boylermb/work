@@ -46,7 +46,7 @@ export class TrackerListComponent implements OnInit {
         top: '100px',
         left: '450px',
       },
-      data: new CityCard(1,'',CardBackground.RED)
+      data: new CityCard(1,'',null)
     });
 
     dialogRef.afterClosed().subscribe(result => {

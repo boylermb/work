@@ -1,11 +1,11 @@
 <h1 mat-dialog-title>Add City</h1>
 <div mat-dialog-content>
   <mat-form-field>
-      <input matInput placeholder="City" [formControl]="calendarForm.get('ate')">
+      <input matInput placeholder="City" [(ngModel)]="data.name">
   </mat-form-field>
   <mat-form-field>
       <mat-select placeholder="Select Color" [(ngModel)]="data.color" >
-          <mat-option *ngFor="let card of cardBackgrounds | keyvalue" [value]= "card">{{card.key}}</mat-option>
+          <mat-option *ngFor="let card of cardBackgrounds | keyvalue" [value]= "card.value">{{card.key}}</mat-option>
           
         </mat-select>
     </mat-form-field>
